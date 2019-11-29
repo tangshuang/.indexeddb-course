@@ -1,0 +1,33 @@
+.container {
+  width: 600px;
+  margin: 20px auto;
+}
+
+.list {
+  border: #f1f1f1 solid 1px;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 20px 0;
+}
+
+.item {
+  padding: 10px 0;
+  border-bottom: #f1f1f1 solid 1px;
+
+  display: flex;
+  align-items: center;
+
+  &:last-child {
+    border-bottom: 0;
+  }
+
+  &-title {
+    font-size: 1.4em;
+    flex: 1;
+    margin: 0 10px;
+  }
+
+  &-done {
+    opacity: .4;
+  }
+}

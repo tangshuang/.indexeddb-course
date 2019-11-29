@@ -1,0 +1,21 @@
+{
+  "name": "indexeddb-project",
+  "private": true,
+  "scripts": {
+    "build:dom": "nautil-cli build dom",
+    "build:webc": "nautil-cli build web-component",
+    "build:ssr": "nautil-cli build ssr",
+    "dev:dom": "nautil-cli dev dom",
+    "dev:webc": "nautil-cli dev web-component",
+    "dev:ssr": "nautil-cli dev ssr",
+    "dev": "npm run dev:dom"
+  },
+  "dependencies": {
+    "antd": "^3.25.3",
+    "indb": "^3.0.4",
+    "nautil": "^0.12.16"
+  },
+  "devDependencies": {
+    "nautil-cli": "^0.6.2"
+  }
+}
