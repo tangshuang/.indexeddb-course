@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<script src="./indb.js"></script>
+<script>
+const indb = new InDB({
+  name: 'My_InDB',
+  stores: [
+    {
+      name: 'students',
+      keyPath: 'id',
+      indexes: [
+        {
+          name: 'name',
+          keyPath: 'name',
+          unique: true,
+        },
+      ],
+    },
+  ],
+})
+const store = indb.use('students')
+
+;(async function() {
+  await store.put({ id: 1, name: 'tomy' })
+  await store.put({ id: 2, name: 'lucy' })
+
+  const all = await store.all()
+  console.log(all)
+})()
+</script>
