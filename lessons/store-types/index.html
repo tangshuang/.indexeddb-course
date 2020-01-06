@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+<script>
+const request = indexedDB.open('types', 2)
+request.onupgradeneeded = function(e) {
+  const db = e.target.result
+  db.createObjectStore('store', {
+    autoIncrement: true,
+  })
+}
+request.onsuccess = function(e) {
+  const db = e.target.result
+  const tx = db.transaction('store', 'readwrite')
+  const objectStore = tx.objectStore('store')
+  const request = objectStore.add('value', 'key')
+
+  request.onsuccess = function(e) {
+    const value = e.target.result
+    console.log(value)
+  }
+  request.onerror = function(e) {
+    console.error(e)
+  }
+}
+</script>
